@@ -2,6 +2,10 @@
 
 GNOME Shell extension that collapses extra tray icons (AppIndicator / KStatusNotifierItem) behind a chevron button in the top bar.
 
+| Collapsed | Expanded |
+| --- | --- |
+| ![Collapsed: extra tray icons hidden behind the chevron](screenshots/collapsed.png) | ![Expanded: hidden icons revealed to the left of the chevron](screenshots/expanded.png) |
+
 - The rightmost *N* tray icons stay visible (default 3). The rest are hidden behind `‹`.
 - Click the chevron to expand or collapse. Expanded icons collapse again automatically after a timeout (default 10 s).
 - The chevron only appears when there are hidden icons. Hidden (passive) indicators are not counted.
