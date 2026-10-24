@@ -8,7 +8,7 @@ GNOME Shell extension that collapses extra tray icons (AppIndicator / KStatusNot
 - **Drag & drop** an icon to choose where it lives: drop it on the chevron (or on a hidden icon) to hide it, drop it on a visible icon to keep it shown. Its position and choice are remembered per app. While dragging, all hidden icons are revealed.
 - Icons you never dragged fill the remaining *N* visible slots automatically.
 
-Requires the [AppIndicator support](https://github.com/ubuntu/gnome-shell-extension-appindicator) extension (`ubuntu-appindicators@ubuntu.com` on Ubuntu). GNOME Shell 45–50.
+Requires the [AppIndicator support](https://github.com/ubuntu/gnome-shell-extension-appindicator) extension (`ubuntu-appindicators@ubuntu.com` on Ubuntu). GNOME Shell 50.
 
 ## Install
 

@@ -1,13 +1,8 @@
 {
   "uuid": "tray-overflow@harpi",
   "name": "Tray Overflow",
-  "description": "Collapse ikon tray (AppIndicator) berlebih di balik tombol chevron yang bisa di-expand/collapse.",
+  "description": "Collapse extra tray icons (AppIndicator / KStatusNotifierItem) behind a chevron in the top bar. Drag and drop icons onto the chevron to hide them, or onto a visible icon to keep them shown; choices and order are remembered per app. Requires the AppIndicator support extension.",
   "shell-version": [
-    "45",
-    "46",
-    "47",
-    "48",
-    "49",
     "50"
   ],
   "settings-schema": "org.gnome.shell.extensions.tray-overflow",
