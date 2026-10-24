@@ -15,5 +15,17 @@
       <default>10</default>
       <summary>Detik sebelum otomatis collapse lagi (0 = tidak pernah)</summary>
     </key>
+    <key name="hidden-items" type="as">
+      <default>[]</default>
+      <summary>Ikon yang di-drag ke area tersembunyi</summary>
+    </key>
+    <key name="shown-items" type="as">
+      <default>[]</default>
+      <summary>Ikon yang di-drag ke area yang selalu tampil</summary>
+    </key>
+    <key name="order" type="as">
+      <default>[]</default>
+      <summary>Urutan ikon tray hasil drag, kiri ke kanan</summary>
+    </key>
   </schema>
 </schemalist>
