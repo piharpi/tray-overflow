@@ -21,7 +21,7 @@ class OverflowButton extends PanelMenu.Button {
     }
 
     setExpanded(expanded) {
-        // Ikon tersembunyi ada di kiri chevron: "<" = buka, ">" = tutup
+        // Hidden icons sit left of the chevron: "<" = expand, ">" = collapse
         this._icon.icon_name = expanded ? 'pan-end-symbolic' : 'pan-start-symbolic';
     }
 
@@ -35,7 +35,7 @@ class OverflowButton extends PanelMenu.Button {
         return Clutter.EVENT_PROPAGATE;
     }
 
-    // Drop ikon di chevron = sembunyikan
+    // Dropping an icon on the chevron hides it
     handleDragOver(source) {
         return this._ext.isTray(source)
             ? DND.DragMotionResult.MOVE_DROP
@@ -126,7 +126,7 @@ export default class TrayOverflowExtension extends Extension {
             box.set_child_below_sibling(ind.container, sibling);
     }
 
-    // Simpan pilihan show/hidden dan urutan ikon setelah drop
+    // Persist the shown/hidden choice and icon order after a drop
     _place(ind, hidden) {
         const key = this._key(ind);
         const hiddenItems = this._settings.get_strv('hidden-items').filter(k => k !== key);
@@ -200,7 +200,7 @@ export default class TrayOverflowExtension extends Extension {
         ind.acceptDrop = (source, actor, x) => this._dropOnTray(source, ind, x);
 
         draggable.connect('drag-begin', () => {
-            // Batalkan klik/aktivasi yang tertunda dari ubuntu-appindicators
+            // Cancel the pending click/activation from ubuntu-appindicators
             ind._waitDoubleClickPromise?.cancel();
             ind.menu?.close?.();
             this._setDragging(true);
@@ -244,7 +244,7 @@ export default class TrayOverflowExtension extends Extension {
                 this._attach(ind);
         }
 
-        // Urutkan sesuai hasil drag; ikon baru (belum dikenal) di paling kiri
+        // Sort by the dragged order; new (unknown) icons go leftmost
         const order = this._settings.get_strv('order');
         const rank = ind => order.indexOf(this._key(ind));
         const current = this._placedTrays();
@@ -258,7 +258,7 @@ export default class TrayOverflowExtension extends Extension {
         const max = this._settings.get_int('max-visible');
         const expanded = this._settings.get_boolean('expanded');
 
-        // Ikon yang belum pernah di-drag mengisi sisa slot max-visible dari kanan
+        // Icons never dragged fill the remaining max-visible slots from the right
         let shownCount = placed.filter(i => i.visible && shownItems.has(this._key(i))).length;
         this._state.clear();
         for (const ind of [...placed].reverse()) {
@@ -274,7 +274,7 @@ export default class TrayOverflowExtension extends Extension {
             this._state.set(ind, hidden);
         }
 
-        // Susun ulang: [tersembunyi...] [chevron] [tampil...]
+        // Reorder: [hidden...] [chevron] [shown...]
         const box = Main.panel._rightBox;
         const own = this._button.container;
         const sequence = [

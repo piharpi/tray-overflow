@@ -4,28 +4,28 @@
     <key name="max-visible" type="i">
       <range min="0" max="50"/>
       <default>3</default>
-      <summary>Jumlah ikon tray yang selalu tampil</summary>
+      <summary>Number of tray icons that are always shown</summary>
     </key>
     <key name="expanded" type="b">
       <default>false</default>
-      <summary>Ikon tersembunyi sedang ditampilkan</summary>
+      <summary>Whether hidden icons are currently revealed</summary>
     </key>
     <key name="auto-collapse" type="i">
       <range min="0" max="3600"/>
       <default>10</default>
-      <summary>Detik sebelum otomatis collapse lagi (0 = tidak pernah)</summary>
+      <summary>Seconds before revealed icons collapse again (0 = never)</summary>
     </key>
     <key name="hidden-items" type="as">
       <default>[]</default>
-      <summary>Ikon yang di-drag ke area tersembunyi</summary>
+      <summary>Icons dragged into the hidden area</summary>
     </key>
     <key name="shown-items" type="as">
       <default>[]</default>
-      <summary>Ikon yang di-drag ke area yang selalu tampil</summary>
+      <summary>Icons dragged into the always-shown area</summary>
     </key>
     <key name="order" type="as">
       <default>[]</default>
-      <summary>Urutan ikon tray hasil drag, kiri ke kanan</summary>
+      <summary>Tray icon order set by dragging, left to right</summary>
     </key>
   </schema>
 </schemalist>
