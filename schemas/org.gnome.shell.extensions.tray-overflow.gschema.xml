@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.tray-overflow" path="/org/gnome/shell/extensions/tray-overflow/">
+    <key name="max-visible" type="i">
+      <range min="0" max="50"/>
+      <default>3</default>
+      <summary>Jumlah ikon tray yang selalu tampil</summary>
+    </key>
+    <key name="expanded" type="b">
+      <default>false</default>
+      <summary>Ikon tersembunyi sedang ditampilkan</summary>
+    </key>
+    <key name="auto-collapse" type="i">
+      <range min="0" max="3600"/>
+      <default>10</default>
+      <summary>Detik sebelum otomatis collapse lagi (0 = tidak pernah)</summary>
+    </key>
+  </schema>
+</schemalist>
