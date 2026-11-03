@@ -199,13 +199,15 @@ export default class TrayOverflowExtension extends Extension {
             : DND.DragMotionResult.CONTINUE;
         ind.acceptDrop = (source, actor, x) => this._dropOnTray(source, ind, x);
 
-        draggable.connect('drag-begin', () => {
+        draggable._trayOverflowIds = [];
+        draggable._trayOverflowIds.push(draggable.connect('drag-begin', () => {
             // Cancel the pending click/activation from ubuntu-appindicators
             ind._waitDoubleClickPromise?.cancel();
             ind.menu?.close?.();
             this._setDragging(true);
-        });
-        draggable.connect('drag-end', () => this._setDragging(false));
+        }));
+        draggable._trayOverflowIds.push(
+            draggable.connect('drag-end', () => this._setDragging(false)));
 
         ind.connectObject(
             'notify::visible', () => this._queueSync(),
@@ -218,6 +220,9 @@ export default class TrayOverflowExtension extends Extension {
     }
 
     _detach(ind, draggable) {
+        for (const id of draggable._trayOverflowIds ?? [])
+            draggable.disconnect(id);
+        draggable._trayOverflowIds = [];
         ind.disconnectObject(this);
         ind.remove_action(draggable._dndGesture);
         delete ind.getDragActor;
