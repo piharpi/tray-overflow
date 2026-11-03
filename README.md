@@ -16,6 +16,8 @@ Requires the [AppIndicator support](https://github.com/ubuntu/gnome-shell-extens
 
 ## Install
 
+From [extensions.gnome.org](https://extensions.gnome.org/review/77099) (in review), or from source:
+
 ```bash
 git clone https://github.com/piharpi/tray-overflow ~/.local/share/gnome-shell/extensions/tray-overflow@harpi
 glib-compile-schemas ~/.local/share/gnome-shell/extensions/tray-overflow@harpi/schemas
