@@ -41,7 +41,7 @@ for k in hidden-items shown-items order; do gsettings --schemadir $S reset org.g
 | CPU | Intel Core Ultra 7 255H (16 threads) |
 | GPU | Intel Graphics (Arrow Lake-P, integrated) |
 | RAM | 29.8 GiB usable |
-| OS | Ubuntu 26.04.1 LTS, kernel 7.0.0-38-generic |
+| OS | Ubuntu 26.04.1 LTS, kernel 7.0.0-42-generic |
 | Desktop | GNOME Shell 50.1, Wayland session |
 | Tray support | `ubuntu-appindicators@ubuntu.com` (gnome-shell-ubuntu-extensions 50.26.04.8ubuntu) |
 
